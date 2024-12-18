@@ -1,0 +1,116 @@
+#popup{
+    @apply
+    fixed
+    w-full
+    h-screen
+    bg-[#0000004c]
+    left-0
+    flex justify-center items-center
+}
+.noteform{
+    @apply
+    w-[800px]
+    h-[680px]
+    bg-white
+    rounded-xl
+}
+.noteformrow{
+    @apply
+    w-full
+    p-[30px]
+}
+.noteformrow .formHead h2{
+    @apply
+    font-BrandFont
+    font-bold
+    text-[26px]
+}
+.noteformrow .formHead{
+    @apply
+    border-b-2
+    pb-5
+    border-gray-500
+    border-dotted
+}
+.noteformrow .formBody{
+    @apply
+    pt-5
+}
+.noteformrow .formBody h2{
+    @apply
+    font-BrandFont
+    font-semibold
+    text-[22px]
+    text-gray-700
+}
+.noteformrow .formBody .noteName{
+    @apply
+    mt-[20px]
+    border-none
+    w-full
+    py-[15px]
+    pl-[20px]
+    bg-gray-200
+    rounded-sm
+    outline-[2px]
+    shadow-md
+    shadow-gray-400;
+    background: rgba(222, 222, 222, 0.5);
+}
+.noteformrow .formBody .noteDetails{
+    @apply
+    mt-[20px]
+    border-none
+    w-full
+    pl-[20px]
+    py-[15px]
+    bg-gray-200
+    rounded-sm
+    outline-[2px]
+    shadow-md
+    shadow-gray-400
+    h-[250px];
+    background: rgba(222, 222, 222, 0.5);
+}
+.popupclose{
+    @apply
+    p-[10px]
+    bg-black
+    rounded-full
+    text-white
+    text-2xl
+    hover:text-black
+    hover:bg-slate-200
+}
+.colors{
+    @apply
+    flex gap-[10px]
+    items-center
+}
+.colors .single-color{
+    @apply
+    w-[30px]
+    h-[30px]
+    flex
+    justify-center
+    items-center
+    rounded-full
+    border-[2px]
+    border-[#7979797c]
+    hover:border-[#000000]
+}
+.saveNote button{
+    @apply
+    flex
+    gap-1
+    py-[10px]
+    px-[40px]
+    bg-cyan-400
+    rounded-xl
+    items-center
+    shadow-md
+    shadow-gray-400
+    text-white
+    hover:bg-cyan-600
+    transition-all
+}

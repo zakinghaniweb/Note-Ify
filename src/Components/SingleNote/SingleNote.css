@@ -1,0 +1,32 @@
+.single-note{
+    @apply
+    m-[30px]
+    w-[250px]
+    h-[300px]
+    rounded-xl
+    shadow-md
+    shadow-gray-700
+    bg-white
+    cursor-pointer
+    overflow-hidden
+    p-[20px]
+    hover:scale-[103%]
+    transition-all
+}
+.noteTitle{
+    @apply
+    font-semibold
+    font-BrandFont
+    text-gray-950
+    text-2xl
+    w-full
+}
+.noteData{
+    @apply
+    font-normal
+    font-BrandFont
+    text-gray-950
+    text-[14px]
+    w-full
+    mt-[20px]
+}

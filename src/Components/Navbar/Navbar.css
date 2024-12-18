@@ -1,0 +1,51 @@
+#navbar{
+    @apply
+    w-full
+    h-[100px]
+    bg-gray-800
+    dark:bg-gray-300
+}
+.navbar-row{
+    @apply
+    w-full
+    h-full
+    flex
+    items-center
+    justify-between
+}
+.navbar-logo h1{
+    @apply
+    font-BrandFont
+    text-white
+    dark:text-black
+    text-[35px]
+    font-bold
+    pl-[50px]
+}
+.navbar-logo h2{
+    @apply
+    font-BrandFont
+    text-gray-200
+    dark:text-gray-800
+    text-[14px]
+    font-normal
+    pl-[50px]
+}
+.profile{
+    @apply
+    pr-[50px]
+    flex
+    items-center
+    gap-5
+}
+.profile .pfp{
+    @apply
+    w-[50px]
+}
+.profile h2{
+    @apply
+    font-BrandFont
+    text-lg
+    text-white
+    dark:text-gray-800
+}

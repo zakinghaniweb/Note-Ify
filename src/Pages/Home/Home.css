@@ -1,0 +1,34 @@
+.card-notes{
+    @apply
+    w-full
+    h-screen
+}
+.addnote{
+    @apply
+    m-[30px]
+    w-[250px]
+    h-[300px]
+    rounded-xl
+    shadow-xl 
+    border-[3px]
+    border-dashed
+    border-gray-500
+    shadow-gray-800/50
+    flex
+    justify-center
+    items-center
+    cursor-pointer
+    hover:border-gray-300
+    hover:dark:border-gray-950
+    transition-all
+}
+.addnote h2{
+    @apply
+    font-BrandFont
+    font-bold
+    text-[24px]
+    text-gray-300
+    dark:text-gray-800
+    flex gap-3
+    items-center
+}

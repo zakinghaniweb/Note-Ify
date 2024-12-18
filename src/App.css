@@ -1,0 +1,7 @@
+body{
+    @apply
+    w-full
+    h-screen
+    bg-slate-700
+    dark:bg-slate-100
+}

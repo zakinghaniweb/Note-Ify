@@ -1,0 +1,66 @@
+#sidebar{
+    @apply
+    w-[350px]
+    h-screen
+    bg-gray-800
+}
+.sidebar-head{
+    @apply
+    h-[80px]
+    bg-slate-900
+    flex
+    items-center
+    justify-between
+    dark:bg-slate-400
+}
+.sidebar-head h2{
+    @apply
+    font-semibold
+    font-BrandFont
+    text-white
+    text-lg
+    pl-[60px]
+}
+.themeMode{
+    @apply
+    p-[10px]
+    rounded-full
+    bg-white
+    text-black
+    hover:text-white
+    hover:bg-black
+    transition-all
+    duration-300
+    mr-12
+    text-[24px]
+}
+.sidebar-menu ul{
+    @apply
+    flex
+    flex-col
+}
+.sidebar-menu ul li{
+    @apply
+    flex
+    items-center
+}
+.sidebar-menu ul li a{
+    @apply
+    font-semibold
+    font-BrandFont
+    text-white
+    dark:text-gray-800
+    text-lg
+    py-[35px]
+    w-[100%]
+    pl-[60px]
+    bg-[#02253f62]
+    opacity-[.9]
+    hover:bg-[#004f8b]
+    transition-all
+    duration-300
+    flex
+    items-center
+    gap-2
+    dark:bg-slate-100
+}
