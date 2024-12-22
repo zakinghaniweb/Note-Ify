@@ -8,10 +8,9 @@
     shadow-gray-700
     bg-white
     cursor-pointer
-    overflow-hidden
     p-[20px]
-    hover:scale-[103%]
     transition-all
+    relative
 }
 .noteTitle{
     @apply
@@ -29,4 +28,38 @@
     text-[14px]
     w-full
     mt-[20px]
+}
+.singleCard-options{
+    @apply
+    absolute
+    right-0
+    top-0
+    p-[10px]
+    bg-black
+    rounded-tr-xl
+    rounded-bl-xl
+    hover:bg-gray-900
+    transition-all
+}
+.singleCard-options .option{
+    @apply
+    w-[100px]
+    bg-gray-100
+    border-[2px]
+    border-gray-300
+    absolute
+    z-[999]
+    py-1
+    rounded-lg
+    mt-2
+}
+.singleCard-options .option li{
+    @apply
+    py-[5px]
+    text-center
+    hover:bg-gray-200
+}
+.singleCard-options .option button{
+    @apply
+    font-medium
 }

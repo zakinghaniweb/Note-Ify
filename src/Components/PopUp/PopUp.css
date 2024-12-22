@@ -6,6 +6,7 @@
     bg-[#0000004c]
     left-0
     flex justify-center items-center
+    z-[9999]
 }
 .noteform{
     @apply

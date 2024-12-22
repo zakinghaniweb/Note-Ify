@@ -3,6 +3,18 @@
     w-[350px]
     h-screen
     bg-gray-800
+    relative
+}
+#sidebar::before{
+    content: "";
+    @apply
+    w-[296px]
+    h-screen
+    fixed
+    bg-gray-800
+    dark:!bg-slate-200
+    z-[-1]
+    top-0
 }
 .sidebar-head{
     @apply

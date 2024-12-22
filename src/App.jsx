@@ -9,6 +9,9 @@ import { ToastContainer } from 'react-toastify'
 import { Provider } from 'react-redux'
 import store from './store'
 import { StrictMode } from 'react'
+import PinNotes from './Pages/PinNotes/PinNotes'
+import AllNotes from './Pages/AllNotes/AllNotes'
+import Trash from './Pages/Trash/Trash'
 
 
 function App() {
@@ -21,8 +24,9 @@ function App() {
         </Route>
         <Route element={<LayoutOne/>}>
             <Route path='/home' element={<Home/>} />
-            <Route path='/notes' element={<Home/>} />
-            <Route path='/pinnotes' element={<Home/>} />
+            <Route path='/allnotes' element={<AllNotes/>} />
+            <Route path='/pinnotes' element={<PinNotes/>} />
+            <Route path='/trashnotes' element={<Trash/>} />
         </Route>
       </Route>
     )

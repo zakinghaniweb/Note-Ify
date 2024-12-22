@@ -5,3 +5,7 @@ body{
     bg-slate-700
     dark:bg-slate-100
 }
+li{
+    @apply
+    list-none
+}

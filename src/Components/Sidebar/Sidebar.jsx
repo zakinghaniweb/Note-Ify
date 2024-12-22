@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
-import { FaPen,FaHome, FaSun, FaMoon } from 'react-icons/fa'
+import { FaPen,FaHome, FaSun, FaMoon, FaTrash } from 'react-icons/fa'
 import { MdPushPin } from 'react-icons/md'
 import { useEffect, useState } from 'react'
 
@@ -46,14 +46,20 @@ const Sidebar = () => {
               </NavLink>
               </li>
               <li>
-              <NavLink to="/notes" className={({ isActive })=>isActive ? "!bg-[#004f8ba0]" : "!bg-[#02253f62] dark:!bg-[#02253f2e]"}>
-                <FaPen /> Notes
+              <NavLink to="/allnotes" className={({ isActive })=>isActive ? "!bg-[#004f8ba0]" : "!bg-[#02253f62] dark:!bg-[#02253f2e]"}>
+                <FaPen /> All Notes
               </NavLink>
               </li>
               <li>
               
               <NavLink to="/pinnotes" className={({ isActive })=>isActive ? "!bg-[#004f8ba0]" : "!bg-[#02253f62] dark:!bg-[#02253f2e]"}>
                 <MdPushPin /> Pinned Notes
+              </NavLink>
+              </li>
+              <li>
+              
+              <NavLink to="/trashnotes" className={({ isActive })=>isActive ? "!bg-[#004f8ba0]" : "!bg-[#02253f62] dark:!bg-[#02253f2e]"}>
+                <FaTrash /> Trash Notes
               </NavLink>
               </li>
             </ul>

@@ -1,7 +1,6 @@
 .card-notes{
     @apply
     w-full
-    h-screen
 }
 .addnote{
     @apply
@@ -31,4 +30,61 @@
     dark:text-gray-800
     flex gap-3
     items-center
+}
+.pin-head{
+    @apply
+    w-full
+    mt-[30px]
+}
+.pin-head h2{
+    @apply
+    font-BrandFont
+    pl-[30px]
+    text-[30px]
+    text-white
+    dark:text-gray-900
+    font-semibold
+    pb-[20px]
+    border-b-2
+    border-white
+    dark:border-gray-900
+    border-dashed
+}
+.all-head{
+    @apply
+    w-full
+    mt-[30px]
+}
+.all-head h2{
+    @apply
+    font-BrandFont
+    pl-[30px]
+    text-[30px]
+    text-white
+    dark:text-gray-900
+    font-semibold
+    pb-[20px]
+    border-b-2
+    border-white
+    dark:border-gray-900
+    border-dashed
+}
+.trash-head{
+    @apply
+    w-full
+    mt-[30px]
+    border-b-2
+    border-white
+    dark:border-gray-900
+    border-dashed
+}
+.trash-head h2{
+    @apply
+    font-BrandFont
+    pl-[30px]
+    text-[30px]
+    text-white
+    dark:text-gray-900
+    font-semibold
+    pb-[20px]
 }
