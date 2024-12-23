@@ -1,0 +1,54 @@
+#view{
+    @apply
+    fixed
+    w-full
+    h-screen
+    bg-[#0000004c]
+    left-0
+    flex justify-center items-center
+    z-[9999]
+}
+.noteview{
+    @apply
+    w-[1000px]
+    h-[750px]
+    bg-white
+    rounded-xl
+    overflow-y-auto
+    relative
+}
+.noteviewRow{
+    @apply
+    p-[30px]
+}
+.noteviewHead{
+    @apply
+    font-BrandFont
+    font-semibold
+    text-[40px]
+    text-center
+    pb-[30px]
+    border-b-2
+    border-dashed
+    border-black
+}
+.noteviewHead button{
+    @apply
+    p-[10px]
+    bg-black
+    text-white
+    text-[30px]
+    hover:text-black
+    hover:bg-slate-200
+    absolute
+    top-0
+    right-0
+    rounded-bl-xl
+}
+.noteviewBody{
+    @apply
+    font-BrandFont
+    font-normal
+    text-[17px]
+    pt-[30px]
+}

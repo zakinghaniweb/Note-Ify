@@ -15,6 +15,7 @@ const db = getDatabase();
     const [uniqueCardKey,setUniqueCardKey] = useState()
     const [showPopup,setShowPopup] = useState(false)
     const [editData,setEditData] = useState([])
+    const [popColorCode,setPopColorCode] = useState("2")
 // Functions ==>
     useEffect(() => {
         onValue(ref(db, 'allNotes/'), (snapshot) => {
@@ -70,7 +71,7 @@ return (
                 )
             })
         }
-        <PopUp showpopup={showPopup} popclose={()=>{setShowPopup(false),setEditData("")}} popEditData={editData}/>
+        <PopUp popColorToken={popColorCode} showpopup={showPopup} popclose={()=>{setShowPopup(false),setEditData("")}} popEditData={editData}/>
     </div>
 )
 }

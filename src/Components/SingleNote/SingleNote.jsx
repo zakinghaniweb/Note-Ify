@@ -4,8 +4,9 @@ import { getDatabase, ref, onValue, update, set, remove } from "firebase/databas
 import { useSelector } from 'react-redux';
 import { SlOptionsVertical } from 'react-icons/sl';
 import PopUp from '../PopUp/PopUp';
+import NoteView from '../NoteView/NoteView';
 
-const SingleNote = () => {
+const SingleNote = ({onClickSingleNote}) => {
 // Firebase Vars
 const currentUserId = useSelector((state)=>state.User.value.uid)
 const db = getDatabase();
@@ -15,6 +16,8 @@ const db = getDatabase();
     const [uniqueCardKey,setUniqueCardKey] = useState()
     const [showPopup,setShowPopup] = useState(false)
     const [editData,setEditData] = useState([])
+    const [viewData,setViewData] = useState([])
+    const [popColorCode,setPopColorCode] = useState("1")
 // Functions ==>
     useEffect(() => {
         onValue(ref(db, 'allNotes/'), (snapshot) => {
@@ -52,12 +55,16 @@ const db = getDatabase();
         setShowPopup(true)
         setEditData(currentCard)
     }
+    const handleNoteView = (currentCard)=>{
+        setViewData(currentCard)
+        onClickSingleNote(currentCard)
+    }
 return (
     <div className='flex flex-wrap'>
         {
             allNotes.map((item)=>{
                 return(
-                <div className='single-note' style={{background:item.noteBg}} key={item.key}>
+                <div className='single-note' onClick={()=>handleNoteView(item)} style={{background:item.noteBg}} key={item.key}>
                     <h2 className='noteTitle' style={{color:item.noteTextCol}}>{item.noteTitle}</h2>
                     <p className='noteData' style={{color:item.noteTextCol}}>{item.noteDetails}</p>
                     <div className="singleCard-options" onClick={()=>{setOptionVisibility(!optionVisibility),setUniqueCardKey(item.key)}}>
@@ -80,7 +87,7 @@ return (
                 )
             })
         }
-        <PopUp showpopup={showPopup} popclose={()=>{setShowPopup(false),setEditData("")}} popEditData={editData}/>
+        <PopUp popColorToken={popColorCode} showpopup={showPopup} popclose={()=>{setShowPopup(false),setEditData("")}} popEditData={editData}/>
     </div>
 )
 }

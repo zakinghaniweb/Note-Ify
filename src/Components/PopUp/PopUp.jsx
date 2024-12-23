@@ -7,7 +7,7 @@ import { getDatabase, push, ref, set, update } from "firebase/database";
 import { MdFormatColorText } from 'react-icons/md'
 import { useSelector } from 'react-redux'
 
-const PopUp = ({showpopup, popclose, popclear, popEditData}) => {
+const PopUp = ({showpopup, popclose, popclear, popEditData, popColorToken}) => {
     // Redux =>
     const currentUserId = useSelector((state)=>state.User.value.uid)
     // Firebase Vars =>
@@ -16,8 +16,7 @@ const PopUp = ({showpopup, popclose, popclear, popEditData}) => {
     const [noteData,setNoteData] = useState({noteName: "",noteDetails: "",noteError: ""})
     const [popUpColor,setPopUpColor] = useState("#FFFFFF")
     const [popUpText,setPopUpText] = useState("#000000")
-    const [showPopup,setShowPopup] = useState(false)
-    const [editData,setEditData] = useState([])
+
     // Functions =>
     const handleSave = ()=>{
         if (!noteData.noteName) {
@@ -114,15 +113,15 @@ return (
                         <button onClick={()=>setPopUpColor("#FFF574")} className="single-color bg-[#FFF574]"></button>
                         <button onClick={()=>setPopUpColor("#A1D6CB")} className="single-color bg-[#A1D6CB]"></button>
                         <button onClick={()=>setPopUpColor("#A19AD3")} className="single-color bg-[#A19AD3]"></button>
-                        <label className="single-color bg-black text-white" htmlFor='color'><FaEyeDropper /></label>
-                        <input value={popUpColor} onChange={(e)=>setPopUpColor(e.target.value)} type="color" className="!bg-transparent !shadow-none" id='color'/>
+                        <label className="single-color bg-black text-white" htmlFor={"color"+popColorToken}><FaEyeDropper /></label>
+                        <input value={popUpColor} onChange={(e)=>setPopUpColor(e.target.value)} type="color" className="!bg-transparent !shadow-none" id={"color"+popColorToken}/>
                     </div>
                     <div className="colors mt-[10px]">
                         <MdFormatColorText className='text-3xl text-gray-500' />
                         <button onClick={()=>setPopUpText("#000000")} className="single-color bg-[#000000]"></button>
                         <button onClick={()=>setPopUpText("#FFFFFF")} className="single-color bg-[#FFFFFF]"></button>
-                        <label className="single-color bg-black text-white" htmlFor='colorText'><FaEyeDropper /></label>
-                        <input value={popUpText} onChange={(e)=>setPopUpText(e.target.value)} type="color" className="!bg-transparent !shadow-none" id='colorText'/>
+                        <label className="single-color bg-black text-white" htmlFor={"colorText"+popColorToken}><FaEyeDropper /></label>
+                        <input value={popUpText} onChange={(e)=>setPopUpText(e.target.value)} type="color" className="!bg-transparent !shadow-none" id={"colorText"+popColorToken}/>
                     </div>
                     </div>
                     <div className="saveNote">
