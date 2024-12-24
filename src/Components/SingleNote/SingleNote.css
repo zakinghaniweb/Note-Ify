@@ -26,8 +26,8 @@
     font-BrandFont
     text-gray-950
     text-[14px]
-    w-full
     mt-[20px]
+    break-words
 }
 .singleCard-options{
     @apply

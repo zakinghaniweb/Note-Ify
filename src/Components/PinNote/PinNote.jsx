@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { SlOptionsVertical } from 'react-icons/sl';
 import PopUp from '../PopUp/PopUp';
 
-const PinNote = () => {
+const PinNote = ({onClickSingleNote,setButtonVisibility}) => {
 // firebase vars
 const currentUserId = useSelector((state)=>state.User.value.uid)
 const db = getDatabase();
@@ -15,6 +15,7 @@ const db = getDatabase();
     const [uniqueCardKey,setUniqueCardKey] = useState()
     const [showPopup,setShowPopup] = useState(false)
     const [editData,setEditData] = useState([])
+    const [viewData,setViewData] = useState([])
     const [popColorCode,setPopColorCode] = useState("2")
 // Functions ==>
     useEffect(() => {
@@ -48,15 +49,31 @@ const db = getDatabase();
         setShowPopup(true)
         setEditData(currentCard)
     }
+    const handleNoteView = (currentCard)=>{
+        setViewData(currentCard)
+        onClickSingleNote(currentCard)
+    }
+    if (PinNotes.length == 0) {
+        setButtonVisibility(false)
+    } else{
+        setButtonVisibility(true)
+    }
 return (
     <div className='flex flex-wrap'>
         {
             PinNotes.map((item)=>{
                 return(
-                <div className='single-note' style={{background:item.noteBg}} key={item.noteTitle}>
+                <div className='single-note' onClick={()=>handleNoteView(item)} style={{background:item.noteBg}} key={item.noteTitle}>
                     <h2 className='noteTitle' style={{color:item.noteTextCol}}>{item.noteTitle}</h2>
-                    <p className='noteData' style={{color:item.noteTextCol}}>{item.noteDetails}</p>
-                    <div className="singleCard-options" onClick={()=>{setOptionVisibility(!optionVisibility),setUniqueCardKey(item.key)}}>
+                    <p className='noteData' style={{color:item.noteTextCol}}>
+                    {
+                    item.noteDetails.length >= 25 ?
+                    item.noteDetails.slice(0, 205) + '...'
+                    :
+                    item.noteDetails
+                    }
+                    </p>
+                    <div className="singleCard-options" onClick={(event)=>{setOptionVisibility(!optionVisibility),setUniqueCardKey(item.key),event.stopPropagation()}}>
                     <SlOptionsVertical className='text-white' />
                     {
                     optionVisibility&& uniqueCardKey == item.key&&                  

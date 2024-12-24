@@ -49,7 +49,14 @@ const TrashNote = ({setButtonVisibility}) => {
                 return(
                 <div className='single-note' style={{background:item.noteBg}} key={item.noteTitle}>
                     <h2 className='noteTitle' style={{color:item.noteTextCol}}>{item.noteTitle}</h2>
-                    <p className='noteData' style={{color:item.noteTextCol}}>{item.noteDetails}</p>
+                    <p className='noteData' style={{color:item.noteTextCol}}>
+                    {
+                    item.noteDetails.length >= 25 ?
+                    item.noteDetails.slice(0, 205) + '...'
+                    :
+                    item.noteDetails
+                    }
+                    </p>
                     <div className="singleCard-options" onClick={()=>{setOptionVisibility(!optionVisibility),setUniqueCardKey(item.key)}}>
                     <SlOptionsVertical className='text-white' />
                     {

@@ -6,7 +6,7 @@ import { SlOptionsVertical } from 'react-icons/sl';
 import PopUp from '../PopUp/PopUp';
 import NoteView from '../NoteView/NoteView';
 
-const SingleNote = ({onClickSingleNote}) => {
+const SingleNote = ({onClickSingleNote,setButtonVisibility}) => {
 // Firebase Vars
 const currentUserId = useSelector((state)=>state.User.value.uid)
 const db = getDatabase();
@@ -59,15 +59,30 @@ const db = getDatabase();
         setViewData(currentCard)
         onClickSingleNote(currentCard)
     }
+    if (allNotes.length == 0) {
+        setButtonVisibility(false)
+    } else{
+        setButtonVisibility(true)
+    }
 return (
     <div className='flex flex-wrap'>
         {
             allNotes.map((item)=>{
                 return(
                 <div className='single-note' onClick={()=>handleNoteView(item)} style={{background:item.noteBg}} key={item.key}>
-                    <h2 className='noteTitle' style={{color:item.noteTextCol}}>{item.noteTitle}</h2>
-                    <p className='noteData' style={{color:item.noteTextCol}}>{item.noteDetails}</p>
-                    <div className="singleCard-options" onClick={()=>{setOptionVisibility(!optionVisibility),setUniqueCardKey(item.key)}}>
+                        <h2 className='noteTitle' style={{color:item.noteTextCol}}>{
+                        item.noteTitle.length >= 25 ?
+                        item.noteTitle.slice(0, 205) + '...'
+                        :
+                        item.noteTitle
+                        }</h2>
+                        <p className='noteData' style={{color:item.noteTextCol}}>{
+                            item.noteDetails.length >= 25 ?
+                            item.noteDetails.slice(0, 205) + '...'
+                            :
+                            item.noteDetails
+                        }</p>
+                    <div className="singleCard-options" onClick={(event)=>{setOptionVisibility(!optionVisibility),setUniqueCardKey(item.key),event.stopPropagation()}}>
                     <SlOptionsVertical className='text-white' />
                     {
                     optionVisibility&& uniqueCardKey == item.key&&                  

@@ -9,12 +9,13 @@ import NoteView from "../../Components/NoteView/NoteView"
 const Home = () => {
   const [showPop,setShowPop] =  useState(false)
   const [showView,setShowView] = useState(false)
+  const [cardView,setCardView] = useState([])
   const dummySetButtonVisibility = () => {
     // Nothing Skip It
   };
-  const handleView = (cardData)=>{
+  const onClickSingleNote = (cardData)=>{
     setShowView(true)
-    console.log(cardData)
+    setCardView(cardData)
   }
   return (
     <div className="w-full h-full">
@@ -28,7 +29,7 @@ const Home = () => {
           <h2>Pinned Notes</h2>
         </div>
         <div className="card-pinNotes flex flex-wrap">
-        <PinNote/>
+        <PinNote onClickSingleNote={onClickSingleNote} setButtonVisibility={dummySetButtonVisibility}/>
         </div>
       </div>
       <div className="all-notes flex flex-wrap">
@@ -36,7 +37,7 @@ const Home = () => {
           <h2>All Notes</h2>
         </div>
         <div className="card-allNotes flex flex-wrap">
-        <SingleNote onClickSingleNote={handleView(item)} />
+        <SingleNote onClickSingleNote={onClickSingleNote} setButtonVisibility={dummySetButtonVisibility} />
         </div>
       </div>
       <div className="trash-notes flex flex-wrap">
@@ -48,7 +49,7 @@ const Home = () => {
         </div>
       </div>
         <PopUp showpopup={showPop} popclose={()=>setShowPop(false)}/>
-        <NoteView showview={showView} notshowview={()=>setShowView(false)} cardView={viewData}/>
+        <NoteView showview={showView} cardView={cardView} notshowview={()=>setShowView(false)}/>
     </div>
   )
 }

@@ -35,6 +35,10 @@
     @apply
     w-full
     mt-[30px]
+    border-b-2
+    border-white
+    dark:border-gray-900
+    border-dashed
 }
 .pin-head h2{
     @apply
@@ -45,15 +49,15 @@
     dark:text-gray-900
     font-semibold
     pb-[20px]
-    border-b-2
-    border-white
-    dark:border-gray-900
-    border-dashed
 }
 .all-head{
     @apply
     w-full
     mt-[30px]
+    border-b-2
+    border-white
+    dark:border-gray-900
+    border-dashed
 }
 .all-head h2{
     @apply
@@ -64,10 +68,6 @@
     dark:text-gray-900
     font-semibold
     pb-[20px]
-    border-b-2
-    border-white
-    dark:border-gray-900
-    border-dashed
 }
 .trash-head{
     @apply
